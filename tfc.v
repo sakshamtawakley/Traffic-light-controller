@@ -105,8 +105,7 @@ module tb;
         #200 $finish;
     end
 
-    // $monitor only accepts simple signals/constants, not function calls,
-    // so we use an always block + $display (called procedurally) instead.
+    
     always @(dut.state or hwy or cntry or X) begin
         $display("t=%0t state=%0d hwy=%s cntry=%s X=%b",
                   $time, dut.state, name(hwy), name(cntry), X);
